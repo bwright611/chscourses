@@ -20,4 +20,26 @@ class StoriesController < ApplicationController
     @stories = Story.latest
   end
   
+  def edit
+    @story = Story.find(params[:id])
+  end
+  
+  def update
+    @story = Story.find(params[:id])
+    respond_to do |format|
+      if @story.update_attributes(params[:story])  
+        format.html { redirect_to root_path, notice: 'Successfully updated course'}
+      else
+        format.html { render 'edit' }
+      end
+    end
+  end
+  
+  def destroy
+    Story.find(params[:id]).destroy
+    redirect_to root_path, notice: 'Successfully removed course'
+    
+  end
+  
+  
 end

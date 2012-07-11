@@ -1,16 +1,2 @@
 <h1>Submit Course</h1>
-<%= form_for @story do |f| %>
-  <fieldset>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </fieldset>
-  <fieldset>
-    <%= f.label :url %>
-    <%= f.text_field :url %>
-  </fieldset>
-  <fieldset>
-    <%= f.label :body, 'Text' %>
-    <%= f.text_field :body %>
-  </fieldset>
-  <%= f.submit 'Submit' %>
-<% end %>
+<%= render 'form' %>

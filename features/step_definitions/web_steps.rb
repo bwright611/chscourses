@@ -21,3 +21,7 @@ end
 Then /^I should not see "(.*?)"$/ do |text|
   page.should_not have_content(text)
 end
+
+Given /^I click link "(.*?)"$/ do |text|
+  click_link text
+end
