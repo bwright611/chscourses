@@ -1,7 +1,9 @@
 Chscodes::Application.routes.draw do
-  resources :comments
 
-  resources :stories
+  resources :stories do 
+    resources :comments  
+  end
+  
 
   devise_for :users
 
