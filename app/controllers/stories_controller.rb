@@ -15,4 +15,9 @@ class StoriesController < ApplicationController
       end
     end
   end
+  
+  def latest
+    @stories = Story.latest
+  end
+  
 end

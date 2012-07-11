@@ -22,4 +22,15 @@ describe Story do
     subject.should be_valid
   end
   
+  describe '#latest' do
+    before do
+      %w{ Foo Bar Baz }.each do |title|
+        Story.create title: title, body: title
+      end
+    end
+    it 'should return the last 50 stories' do
+      Story.latest.first.title.should == 'Baz'
+      Story.latest.last.title.should == 'Foo'
+    end
+  end
 end

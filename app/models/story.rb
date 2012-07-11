@@ -6,4 +6,6 @@ class Story < ActiveRecord::Base
   validates :title, :presence => true
   validates :url, :presence => true, :if => "body.blank?"
   validates :body, :presence => true, :if => "url.blank?"
+  
+  scope :latest, :order => 'created_at desc', :limit => 50
 end
