@@ -4,4 +4,10 @@
   <%= link_to 'Remove', story_path(story), :method => :delete, :confirm => 'Are you sure?', :class => 'btn' %>
   <%= link_to 'new comment', new_story_comment_path(story) %>
   <%= link_to "comments (#{story.comments.count})", story_path(story) %>
+  <%= link_to "Vote Up", up_story_path(story), :method => :post  %>
+  <%= link_to "Vote Down", down_story_path(story), :method => :post %>
+  <p>
+    <label>Votes</label>
+    <%= "up #{story.up || 0} down #{story.down || 0}"  %>
+  </p>
 </li>

@@ -1,7 +1,11 @@
 Chscodes::Application.routes.draw do
 
   resources :stories do 
-    resources :comments  
+    resources :comments
+    member do 
+      post 'up'
+      post 'down'
+    end
   end
   
 
