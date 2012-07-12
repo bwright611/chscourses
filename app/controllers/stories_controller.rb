@@ -11,6 +11,7 @@ class StoriesController < ApplicationController
   
   def create
     @story = Story.new(params[:story])
+    @story.user = current_user
     respond_to do |format|
       if @story.save
         format.html { redirect_to root_path, 

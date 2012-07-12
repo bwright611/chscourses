@@ -1,7 +1,11 @@
 <li>
   <%= link_to story.title, story_link(story) %>
-  <%= link_to 'Edit', edit_story_path(story), :class => 'btn' %>
-  <%= link_to 'Remove', story_path(story), :method => :delete, :confirm => 'Are you sure?', :class => 'btn' %>
+  <% if can? :update, story %>
+    <%= link_to 'Edit', edit_story_path(story), :class => 'btn' %>
+  <% end %>
+  <% if can? :destroy, story %>  
+    <%= link_to 'Remove', story_path(story), :method => :delete, :confirm => 'Are you sure?', :class => 'btn' %>
+  <% end %>
   <%= link_to 'new comment', new_story_comment_path(story) %>
   <%= link_to "comments (#{story.comments.count})", story_path(story) %>
   <%= link_to "Vote Up", up_story_path(story), :method => :post  %>
