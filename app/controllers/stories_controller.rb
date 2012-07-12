@@ -1,5 +1,6 @@
 
 class StoriesController < ApplicationController
+  before_filter :authenticate_user!, :except => [:index, :latest]
   def index
     @stories = Story.limit(50).all
   end

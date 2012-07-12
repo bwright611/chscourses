@@ -1,5 +1,13 @@
 Feature: Submit
 
+Background: 
+
+Given I am user "user@email.com" with password "foobar"
+And I visit "/users/sign_in"
+And I fill in "Email" with "user@email.com"
+And I fill in "Password" with "foobar"
+And I click "Sign in"
+
 Scenario: Happy Path
 
 Given I visit "/submit"

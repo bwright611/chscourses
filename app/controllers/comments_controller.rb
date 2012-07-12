@@ -1,5 +1,6 @@
 
 class CommentsController < ApplicationController
+  before_filter :authenticate_user!, :except => [:index, :latest]
   
   def new 
     @story = Story.find(params[:story_id])
