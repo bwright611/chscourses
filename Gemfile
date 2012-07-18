@@ -4,6 +4,8 @@ gem 'thin'
 gem 'rails', '3.2.5'
 gem 'devise'
 gem 'cancan'
+gem 'rest-client'
+gem 'json'
 
 # Bundle edge Rails instead:
 
