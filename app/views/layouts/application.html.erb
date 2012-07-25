@@ -34,6 +34,8 @@
               <li><%= link_to "Top", root_path  %></li>
               <li><%= link_to "Latest", "/latest"  %></li>
               <li><%= link_to "Submit", "/submit"  %></li>
+              <li><%= link_to "RSS", "/latest.rss"  %></li>
+              
               <% if user_signed_in? %>
                 <li><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %></li>
               <% else %>
