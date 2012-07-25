@@ -3,6 +3,10 @@ class StoriesController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :latest]
   def index
     @stories = Story.limit(50).all
+    respond_to do |format|
+      format.rss { render :layout => false }
+      format.html
+    end
   end
   
   def new
@@ -24,6 +28,10 @@ class StoriesController < ApplicationController
   
   def latest
     @stories = Story.latest
+    respond_to do |format|
+      format.rss { render :layout => false }
+      format.html
+    end
   end
   
   def show

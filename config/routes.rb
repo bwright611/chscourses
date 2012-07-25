@@ -12,6 +12,7 @@ Chscodes::Application.routes.draw do
   devise_for :users
   
   root :to => 'stories#index'
+  match '/index', to: 'stories#index'
   match '/submit', to: 'stories#new'
   match '/latest', to: 'stories#latest'
   match '/profile', to: 'profile#show'
