@@ -1,15 +1,15 @@
-<%= form_for @story do |f| %>
+<%= form_for @story, :html => { :class => 'well'} do |f| %>
   <fieldset>
     <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :class => 'span6', :placeholder => 'enter descriptive title' %>
   </fieldset>
   <fieldset>
     <%= f.label :url %>
-    <%= f.text_field :url %>
+    <%= f.text_field :url, :class => 'span6', :placeholder => 'http://www.foo.com' %>
   </fieldset>
   <fieldset>
     <%= f.label :body, 'Text' %>
-    <%= f.text_field :body %>
+    <%= f.text_area :body, :class => 'span6', :rows => 5 %>
   </fieldset>
   <%= f.submit 'Submit' %>
 <% end %>

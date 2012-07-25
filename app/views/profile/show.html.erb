@@ -1,11 +1,20 @@
-<h1>Your Profile</h1>
-
-<p>
-  <label>User Name</label>
-  <%= @profile.name %>
-</p>
-
-<p>
-  <label>Photo</label>
-  <%= image_tag @profile.photo %>
-</p>
+<div class="hero-unit">
+  <h1>Your Profile</h1>
+</div>
+<div class="row">
+  <div class="span3">
+    <%= image_tag @profile.photo %>
+  </div>
+  <div class="span4">
+    <h2><%= @profile.name %></h2>
+    <%= link_to 'More', @profile.url  %>
+  </div>
+  
+</div>
+<div class="row">
+  <div class="span8">
+    <center>
+      <a href="/" class="btn btn-primary">Return to Home</a>
+    </center>
+  </div>
+</div>
