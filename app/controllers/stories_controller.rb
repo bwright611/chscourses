@@ -24,6 +24,10 @@ class StoriesController < ApplicationController
   
   def latest
     @stories = Story.latest
+    respond_to do |format|
+      format.rss { render :layout => false }
+      format.html
+    end
   end
   
   def show
