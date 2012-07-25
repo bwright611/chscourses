@@ -6,6 +6,7 @@ gem 'devise'
 gem 'cancan'
 gem 'rest-client'
 gem 'json'
+gem 'builder'
 
 # Bundle edge Rails instead:
 

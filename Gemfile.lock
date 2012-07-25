@@ -185,6 +185,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  builder
   cancan
   coffee-rails (~> 3.2.1)
   cucumber-rails
